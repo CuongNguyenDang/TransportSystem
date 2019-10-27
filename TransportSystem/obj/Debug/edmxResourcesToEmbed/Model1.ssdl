@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="23" />
+    <Property Name="coords" Type="varchar" MaxLength="33" />
+    <Property Name="start_year" Type="int" />
+    <Property Name="url_name" Type="varchar" MaxLength="25" />
+    <Property Name="country" Type="varchar" MaxLength="16" />
+    <Property Name="country_state" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="lines">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="city_id" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="110" />
+    <Property Name="url_name" Type="varchar" MaxLength="99" />
+    <Property Name="color" Type="varchar" MaxLength="7" />
+    <Property Name="system_id" Type="int" />
+    <Property Name="transport_mode_id" Type="int" />
+  </EntityType>
+  <EntityType Name="station_lines">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="station_id" Type="int" Nullable="false" />
+    <Property Name="line_id" Type="int" Nullable="false" />
+    <Property Name="city_id" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="varchar" MaxLength="26" Nullable="false" />
+    <Property Name="updated_at" Type="varchar" MaxLength="26" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="68" />
+    <Property Name="geometry" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="buildstart" Type="int" />
+    <Property Name="opening" Type="int" />
+    <Property Name="closure" Type="int" />
+    <Property Name="city_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="systems">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="city_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="48" />
+  </EntityType>
+  <EntityType Name="track_lines">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="section_id" Type="int" Nullable="false" />
+    <Property Name="line_id" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="varchar" MaxLength="26" Nullable="false" />
+    <Property Name="updated_at" Type="varchar" MaxLength="26" Nullable="false" />
+    <Property Name="city_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tracks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="buildstart" Type="int" />
+    <Property Name="opening" Type="int" />
+    <Property Name="closure" Type="int" />
+    <Property Name="length" Type="int" Nullable="false" />
+    <Property Name="city_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="MyDatabaseModelStoreContainer">
+    <EntitySet Name="cities" EntityType="Self.cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lines" EntityType="Self.lines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="station_lines" EntityType="Self.station_lines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stations" EntityType="Self.stations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="systems" EntityType="Self.systems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="track_lines" EntityType="Self.track_lines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tracks" EntityType="Self.tracks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

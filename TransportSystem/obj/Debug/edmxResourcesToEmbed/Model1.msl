@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyDatabaseModelStoreContainer" CdmEntityContainer="Database">
+    <EntitySetMapping Name="station_lines">
+      <EntityTypeMapping TypeName="MyDatabaseModel.station_lines">
+        <MappingFragment StoreEntitySet="station_lines">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="station_id" ColumnName="station_id" />
+          <ScalarProperty Name="line_id" ColumnName="line_id" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stations">
+      <EntityTypeMapping TypeName="MyDatabaseModel.station">
+        <MappingFragment StoreEntitySet="stations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="geometry" ColumnName="geometry" />
+          <ScalarProperty Name="buildstart" ColumnName="buildstart" />
+          <ScalarProperty Name="opening" ColumnName="opening" />
+          <ScalarProperty Name="closure" ColumnName="closure" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="systems">
+      <EntityTypeMapping TypeName="MyDatabaseModel.system">
+        <MappingFragment StoreEntitySet="systems">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="track_lines">
+      <EntityTypeMapping TypeName="MyDatabaseModel.track_lines">
+        <MappingFragment StoreEntitySet="track_lines">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="section_id" ColumnName="section_id" />
+          <ScalarProperty Name="line_id" ColumnName="line_id" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tracks">
+      <EntityTypeMapping TypeName="MyDatabaseModel.track">
+        <MappingFragment StoreEntitySet="tracks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="buildstart" ColumnName="buildstart" />
+          <ScalarProperty Name="opening" ColumnName="opening" />
+          <ScalarProperty Name="closure" ColumnName="closure" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Types">
+      <EntityTypeMapping TypeName="MyDatabaseModel.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type1" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cities">
+      <EntityTypeMapping TypeName="MyDatabaseModel.city">
+        <MappingFragment StoreEntitySet="cities">
+          <ScalarProperty Name="country_state" ColumnName="country_state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="url_name" ColumnName="url_name" />
+          <ScalarProperty Name="start_year" ColumnName="start_year" />
+          <ScalarProperty Name="coords" ColumnName="coords" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lines">
+      <EntityTypeMapping TypeName="MyDatabaseModel.line">
+        <MappingFragment StoreEntitySet="lines">
+          <ScalarProperty Name="transport_mode_id" ColumnName="transport_mode_id" />
+          <ScalarProperty Name="system_id" ColumnName="system_id" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="url_name" ColumnName="url_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

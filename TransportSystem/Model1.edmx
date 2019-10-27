@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="23" />
+          <Property Name="coords" Type="varchar" MaxLength="33" />
+          <Property Name="start_year" Type="int" />
+          <Property Name="url_name" Type="varchar" MaxLength="25" />
+          <Property Name="country" Type="varchar" MaxLength="16" />
+          <Property Name="country_state" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="lines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="city_id" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="110" />
+          <Property Name="url_name" Type="varchar" MaxLength="99" />
+          <Property Name="color" Type="varchar" MaxLength="7" />
+          <Property Name="system_id" Type="int" />
+          <Property Name="transport_mode_id" Type="int" />
+        </EntityType>
+        <EntityType Name="station_lines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="station_id" Type="int" Nullable="false" />
+          <Property Name="line_id" Type="int" Nullable="false" />
+          <Property Name="city_id" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="varchar" MaxLength="26" Nullable="false" />
+          <Property Name="updated_at" Type="varchar" MaxLength="26" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stations">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="68" />
+          <Property Name="geometry" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="buildstart" Type="int" />
+          <Property Name="opening" Type="int" />
+          <Property Name="closure" Type="int" />
+          <Property Name="city_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="systems">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="city_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="48" />
+        </EntityType>
+        <EntityType Name="track_lines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="section_id" Type="int" Nullable="false" />
+          <Property Name="line_id" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="varchar" MaxLength="26" Nullable="false" />
+          <Property Name="updated_at" Type="varchar" MaxLength="26" Nullable="false" />
+          <Property Name="city_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tracks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="buildstart" Type="int" />
+          <Property Name="opening" Type="int" />
+          <Property Name="closure" Type="int" />
+          <Property Name="length" Type="int" Nullable="false" />
+          <Property Name="city_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="MyDatabaseModelStoreContainer">
+          <EntitySet Name="cities" EntityType="Self.cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lines" EntityType="Self.lines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="station_lines" EntityType="Self.station_lines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stations" EntityType="Self.stations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="systems" EntityType="Self.systems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="track_lines" EntityType="Self.track_lines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tracks" EntityType="Self.tracks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="station_lines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="station_id" Type="Int32" Nullable="false" />
+          <Property Name="line_id" Type="Int32" Nullable="false" />
+          <Property Name="city_id" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="String" MaxLength="26" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="updated_at" Type="String" MaxLength="26" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="station">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="68" FixedLength="false" Unicode="false" />
+          <Property Name="geometry" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="buildstart" Type="Int32" />
+          <Property Name="opening" Type="Int32" />
+          <Property Name="closure" Type="Int32" />
+          <Property Name="city_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="system">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="city_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="track_lines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="section_id" Type="Int32" Nullable="false" />
+          <Property Name="line_id" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="String" MaxLength="26" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="updated_at" Type="String" MaxLength="26" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="track">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="buildstart" Type="Int32" />
+          <Property Name="opening" Type="Int32" />
+          <Property Name="closure" Type="Int32" />
+          <Property Name="length" Type="Int32" Nullable="false" />
+          <Property Name="city_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Database" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="station_lines" EntityType="Self.station_lines" />
+          <EntitySet Name="stations" EntityType="Self.station" />
+          <EntitySet Name="systems" EntityType="Self.system" />
+          <EntitySet Name="track_lines" EntityType="Self.track_lines" />
+          <EntitySet Name="tracks" EntityType="Self.track" />
+          <EntitySet Name="Types" EntityType="Self.Type" />
+          <EntitySet Name="cities" EntityType="MyDatabaseModel.city" />
+          <EntitySet Name="lines" EntityType="MyDatabaseModel.line" />
+        </EntityContainer>
+        <EntityType Name="city">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="23" FixedLength="false" Unicode="false" />
+          <Property Name="coords" Type="String" MaxLength="33" FixedLength="false" Unicode="false" />
+          <Property Name="start_year" Type="Int32" />
+          <Property Name="url_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="country_state" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="line">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="city_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="110" FixedLength="false" Unicode="false" />
+          <Property Name="url_name" Type="String" MaxLength="99" FixedLength="false" Unicode="false" />
+          <Property Name="color" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="system_id" Type="Int32" />
+          <Property Name="transport_mode_id" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyDatabaseModelStoreContainer" CdmEntityContainer="Database">
+          <EntitySetMapping Name="station_lines">
+            <EntityTypeMapping TypeName="MyDatabaseModel.station_lines">
+              <MappingFragment StoreEntitySet="station_lines">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="station_id" ColumnName="station_id" />
+                <ScalarProperty Name="line_id" ColumnName="line_id" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stations">
+            <EntityTypeMapping TypeName="MyDatabaseModel.station">
+              <MappingFragment StoreEntitySet="stations">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="geometry" ColumnName="geometry" />
+                <ScalarProperty Name="buildstart" ColumnName="buildstart" />
+                <ScalarProperty Name="opening" ColumnName="opening" />
+                <ScalarProperty Name="closure" ColumnName="closure" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="systems">
+            <EntityTypeMapping TypeName="MyDatabaseModel.system">
+              <MappingFragment StoreEntitySet="systems">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="track_lines">
+            <EntityTypeMapping TypeName="MyDatabaseModel.track_lines">
+              <MappingFragment StoreEntitySet="track_lines">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="section_id" ColumnName="section_id" />
+                <ScalarProperty Name="line_id" ColumnName="line_id" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tracks">
+            <EntityTypeMapping TypeName="MyDatabaseModel.track">
+              <MappingFragment StoreEntitySet="tracks">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="buildstart" ColumnName="buildstart" />
+                <ScalarProperty Name="opening" ColumnName="opening" />
+                <ScalarProperty Name="closure" ColumnName="closure" />
+                <ScalarProperty Name="length" ColumnName="length" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="MyDatabaseModel.Type">
+              <MappingFragment StoreEntitySet="Type">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type1" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cities">
+            <EntityTypeMapping TypeName="MyDatabaseModel.city">
+              <MappingFragment StoreEntitySet="cities">
+                <ScalarProperty Name="country_state" ColumnName="country_state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="url_name" ColumnName="url_name" />
+                <ScalarProperty Name="start_year" ColumnName="start_year" />
+                <ScalarProperty Name="coords" ColumnName="coords" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lines">
+            <EntityTypeMapping TypeName="MyDatabaseModel.line">
+              <MappingFragment StoreEntitySet="lines">
+                <ScalarProperty Name="transport_mode_id" ColumnName="transport_mode_id" />
+                <ScalarProperty Name="system_id" ColumnName="system_id" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="url_name" ColumnName="url_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
