@@ -11,3 +11,16 @@ C:\Users\USER\Desktop\SQL\TransportSystem\TransportSystem\obj\Debug\TransportSys
 C:\Users\USER\Desktop\SQL\TransportSystem\TransportSystem\obj\Debug\TransportSystem.csproj.GenerateResource.Cache
 C:\Users\USER\Desktop\SQL\TransportSystem\TransportSystem\obj\Debug\TransportSystem.exe
 C:\Users\USER\Desktop\SQL\TransportSystem\TransportSystem\obj\Debug\TransportSystem.pdb
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\bin\Debug\TransportSystem.exe.config
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\obj\Debug\TransportSystem.exe
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\obj\Debug\TransportSystem.pdb
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\bin\Debug\TransportSystem.exe
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\bin\Debug\TransportSystem.pdb
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\bin\Debug\EntityFramework.dll
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\bin\Debug\EntityFramework.xml
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\obj\Debug\TransportSystem.csprojResolveAssemblyReference.cache
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\obj\Debug\TransportSystem.Properties.Resources.resources
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\obj\Debug\TransportSystem.csproj.GenerateResource.Cache
+C:\Users\USER\Desktop\GIT\TransportSystem\TransportSystem\obj\Debug\TransportSystem.Form1.resources

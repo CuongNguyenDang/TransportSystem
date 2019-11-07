@@ -34,6 +34,7 @@
             this.btRun = new System.Windows.Forms.Button();
             this.Panel = new System.Windows.Forms.Panel();
             this.txtResult = new System.Windows.Forms.RichTextBox();
+            this.txtDetail = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDataset)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,15 +87,25 @@
             this.txtResult.Enabled = false;
             this.txtResult.Location = new System.Drawing.Point(925, 14);
             this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(252, 434);
+            this.txtResult.Size = new System.Drawing.Size(404, 257);
             this.txtResult.TabIndex = 6;
             this.txtResult.Text = "";
+            // 
+            // txtDetail
+            // 
+            this.txtDetail.Enabled = false;
+            this.txtDetail.Location = new System.Drawing.Point(926, 284);
+            this.txtDetail.Name = "txtDetail";
+            this.txtDetail.Size = new System.Drawing.Size(402, 160);
+            this.txtDetail.TabIndex = 7;
+            this.txtDetail.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1180, 460);
+            this.ClientSize = new System.Drawing.Size(1341, 460);
+            this.Controls.Add(this.txtDetail);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.Panel);
             this.Controls.Add(this.btRun);
@@ -117,6 +128,7 @@
         private System.Windows.Forms.Button btRun;
         private System.Windows.Forms.Panel Panel;
         private System.Windows.Forms.RichTextBox txtResult;
+        private System.Windows.Forms.RichTextBox txtDetail;
     }
 }
 

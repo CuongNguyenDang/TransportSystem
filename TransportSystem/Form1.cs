@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data.Common;
 
 namespace TransportSystem
 {
@@ -22,11 +24,6 @@ namespace TransportSystem
             var result = from c in db.Types select c.Type1;
             cbType.DataSource = result.ToList();
             dtgvDataset.DataSource = db.cities.ToList();
-            //=================================================
-            TDataset Data = new TDataset();
-            //Load data to Linked List (Data)
-            //TODO
-
         }
 
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,38 +73,5 @@ namespace TransportSystem
         }
 
     }
-#region TypeOfData
-    struct TCity
-    {
-        //TODO 
-    }
-    struct TLine
-    {
-        //TODO
-    }
-    struct TStationLine
-    {
-        //TODO
-    }
-    struct TStation
-    {
-        //TODO
-    }
-    struct TSystem
-    {
-        //TODO
-    }
-    struct TTrackLine
-    {
-        //TODO
-    }
-    struct TTrack
-    {
-        //TODO
-    }
-#endregion
-    public class TDataset
-    {
-        //TODO
-    }
+
 }
